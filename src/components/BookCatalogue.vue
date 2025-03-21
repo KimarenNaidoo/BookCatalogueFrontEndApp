@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bg-gray-800 text-gray-300">
     <h1>Book Catalogue.</h1>
     <div v-if="loading">Loading books...</div>
     <div v-else>
