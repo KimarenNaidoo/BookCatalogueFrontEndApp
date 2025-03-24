@@ -1,1 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
 @import "tailwindcss";
+
+/* Variables */
+:root {
+    --primary-color: #9EC8B9;
+    --secondary-color: #5C8374;
+    --tertiary-color: #1B4242;
+    --background-color: #092635; 
+    --text-selected: white;
+    --font-main: 'JetBrains Mono', monospace;
+}
+
+html {
+    background-color: var(--background-color);
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 30px;
+    color: var(--primary-color);
+    font-family: var(--font-main)
+}

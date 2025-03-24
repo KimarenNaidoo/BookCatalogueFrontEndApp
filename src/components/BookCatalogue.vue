@@ -1,10 +1,10 @@
 <template>
-  <div class="bg-gray-800 text-gray-300">
+  <div>
     <h1>Book Catalogue.</h1>
     <div v-if="loading">Loading books...</div>
     <div v-else>
       <div v-for="book in books" :key="book.id" class="book-item">
-        <h3>Title: {{ book.title }}</h3>
+        <h4>Title: {{ book.title }}</h4>
         <p>Author/s: {{ book.author }}</p>
       </div>
     </div>
