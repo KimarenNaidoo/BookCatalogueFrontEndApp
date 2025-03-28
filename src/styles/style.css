@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
-@import "tailwindcss";
 
 /* Variables */
 :root {
@@ -20,4 +19,21 @@ body {
     margin: 30px;
     color: var(--primary-color);
     font-family: var(--font-main)
+}
+
+.book-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    
+}
+
+.book-item {
+    border-style: solid;
+    border-color: var(--tertiary-color);
+    border-radius: 1.5rem;
+    padding: 1rem;
+    text-wrap: wrap;
+    flex: 0 0 calc(25% - 1rem);
 }

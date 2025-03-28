@@ -1,21 +1,23 @@
 <template>
   <div>
-    <h1>Book Catalogue.</h1>
+    <h1>Book Catalogue</h1>
+    <br>
     <div v-if="loading">Loading books...</div>
-    <div v-else>
-      <div v-for="book in books" :key="book.id" class="book-item">
-        <h4>Title: {{ book.title }}</h4>
-        <p>Author/s: {{ book.author }}</p>
-      </div>
+    <div v-else class="book-list">
+      <BookItem v-for="book in books" :key="book.id" :book="book"/>
     </div>
   </div>
 </template>
 
 <script>
 import bookService from '../services/bookService';
+import BookItem from './BookItem.vue';
 
 export default {
   name: 'BookCatalogue',
+  components: {
+    BookItem
+  },
   data() {
     return {
       books: [],
