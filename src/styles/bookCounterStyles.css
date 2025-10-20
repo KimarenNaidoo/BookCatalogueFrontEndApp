@@ -1,0 +1,38 @@
+#book-counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    margin-top: 2.5rem;
+}
+
+.button-counter {
+    background-color: var(--tertiary-color);
+    color: var(--primary-color);
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-family: var(--font-main);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: var(--secondary-color);
+        color: var(--text-selected);
+    }
+}
+
+
+.disabled-button-counter {
+    background-color: var(--tertiary-color);
+    color: var(--secondary-color);
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-family: var(--font-main);
+    cursor: not-allowed;
+}
+
+#next-button {
+    padding: 0.5rem 2rem;
+}

@@ -28,7 +28,7 @@ export default {
       books: [],
       loading: true,
       currentOffset: 0,
-      limit: 10,
+      limit: 9,
       totalBooks: 1000
     }
   },

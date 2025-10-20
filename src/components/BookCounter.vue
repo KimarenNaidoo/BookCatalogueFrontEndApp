@@ -1,13 +1,16 @@
 <template>
-    <div>
-        <div v-if="currentOffset != 0" id="prev-button">
-            <button @click="fetchPrevBooks">Previous</button>
+    <div id="book-counter">
+        <div v-if="currentOffset != 0">
+            <button class="button-counter" id ="prev-button" @click="fetchPrevBooks">Previous</button>
+        </div>
+        <div v-else>
+            <button class="disabled-button-counter" disabled>Previous</button>
         </div>
         <div id="page-indicator">
-            {{ page }}
+            <span>{{ page }}</span>
         </div>
-        <div v-if="(currentOffset + limit) < totalBooks" id ="next-button">
-            <button @click="fetchNextBooks">Next</button>
+        <div v-if="(currentOffset + limit) < totalBooks">
+            <button class="button-counter" id ="next-button" @click="fetchNextBooks">Next</button>
         </div>
     </div>
 </template>
@@ -44,4 +47,5 @@ export default {
             this.$emit('prev-data');
         }
     }
+}
 </script>
