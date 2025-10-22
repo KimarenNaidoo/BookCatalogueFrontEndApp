@@ -30,10 +30,27 @@ body {
 }
 
 .book-item {
-    border-style: solid;
-    border-color: var(--tertiary-color);
+    border-style: none;
+    background-color: var(--tertiary-color);
     border-radius: 1.5rem;
     padding: 1rem;
     text-wrap: wrap;
     flex: 0 0 calc(25% - 1rem);
+
+    p {
+        font-size: small;
+    }
+
+    hr {
+        color: var(--primary-color);
+    }
+
+    &:hover {
+        color: var(--text-selected);
+        transform: scale(1.05);
+
+        hr {
+            color: var(--text-selected);
+        }
+    }
 }

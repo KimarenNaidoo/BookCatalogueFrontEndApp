@@ -7,15 +7,7 @@
       <BookItem v-for="book in books" :key="book.id" :book="book"/>
     </div>
     <br>
-    <div v-if="currentOffset != 0" id="prev-button">
-      <button @click="fetchPrevBooks">Previous</button>
-    </div>
-    <div id="page-indicator">
-      {{ page }}
-    </div>
-    <div v-if="(currentOffset + limit) < totalBooks" id ="next-button">
-      <button @click="fetchNextBooks">Next</button>
-    </div>
+    <BookCounter :totalBooks="totalBooks" :currentOffset="currentOffset" :limit="limit" @next-data="fetchNextBooks" @prev-data="fetchPrevBooks"/>
     <br>
   </div>
 </template>
@@ -23,20 +15,21 @@
 <script>
 import bookService from '../services/bookService';
 import BookItem from './BookItem.vue';
+import BookCounter from './BookCounter.vue';
 
 export default {
   name: 'BookCatalogue',
   components: {
-    BookItem
+    BookItem,
+    BookCounter
   },
   data() {
     return {
       books: [],
       loading: true,
       currentOffset: 0,
-      limit: 10,
-      totalBooks: 1000,
-      page: 1
+      limit: 9,
+      totalBooks: 1000
     }
   },
   mounted() {
@@ -56,12 +49,10 @@ export default {
     },
     fetchNextBooks() {
       this.currentOffset += this.limit;
-      this.page++;
       this.fetchBooks(this.currentOffset, this.limit);
     },
     fetchPrevBooks() {
       this.currentOffset -= this.limit;
-      this.page--;
       this.fetchBooks(this.currentOffset, this.limit);
     }
   }
